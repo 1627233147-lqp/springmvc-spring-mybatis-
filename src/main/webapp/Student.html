@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>欢迎来到磐石学生系统</title>
+  <script type="text/javascript" src="js/jquery.js" defer="defer"></script>
+  <script type="text/javascript" src="js/stu.js" defer="defer"></script>
+  <style>
+
+    .d1{
+      width: 1000px;
+      height:600px;
+      border:5px solid black;
+      margin:0px auto;
+    }
+    .d2{
+      height: 50px;
+      border-bottom: 5px solid black;
+      font-size: 28px;
+      line-height: 50px;
+    }
+
+    .d4{
+      width:200px;
+      border-right:5px solid black;
+      height:550px;
+      display: inline-block;
+    }
+    .d5{
+      display: inline-block;
+    }
+    font {
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="d1">
+  <div class="d2">磐石系统
+
+  </div>
+  <div class="d3">
+    <div class="d4">
+      <div><a href="">1.查询学生</a></div>
+      <form method="get" onsubmit="return false">
+        <div> 姓名：<input type="text" id="stuName"></div>
+        <div>年龄：<input type="text" id="stuAge"></div>
+        <div> 性别：<input type="text" id="stuSex"></div>
+        <div>家庭住址：<input type="text" id="stuFamily"></div>
+        <div><button type="submit" value="点我搜索" onclick="queruStudent()">点我搜索</button></div>
+        <div>
+          增加s
+          <div>
+            <div> 姓名：<input type="text" id="stuNamea"></div>
+            <div>年龄：<input type="text" id="stuAgea"></div>
+            <div> 性别：<input type="text" id="stuSexa"></div>
+            <div>家庭住址：<input type="text" id="stuFamilya"></div>
+            <div><button type="submit" value="点我增加" onclick="insertUser()">点我增加</button></div>
+          </div>
+          <div>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="d5">
+      学生列表
+
+      <table id="mytable">
+        <tr>
+          <td>id</td>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+          <td>家庭住址</td>
+        </tr>
+
+
+
+      </table>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

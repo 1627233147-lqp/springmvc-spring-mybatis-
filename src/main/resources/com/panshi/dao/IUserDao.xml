@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.panshi.dao.IUserDao">
+    <resultMap id="UserVOs" type="com.panshi.vo.UserVo">
+        <id column="stu_id" property="stuId"></id>
+        <result column="stu_name" property="stuName"></result>
+        <result column="stu_age" property="stuAge"></result>
+        <result column="stu_sex" property="stuSex"></result>
+        <result column="stu_family" property="stuFamily"></result>
+    </resultMap>
+    <select id="findUser" resultMap="UserVOs" parameterType="UserVo">
+        SELECT * FROM student
+        <where>
+            <if test="stuName !=null and stuName != ''">
+                stu_name = #{stuName}
+            </if>
+            <if test="stuAge !=null and stuAge != ''">
+                and  stu_age = #{stuAge}
+            </if>
+            <if test="stuSex !=null and stuSex != ''">
+                and  stu_sex = #{stuSex}
+            </if>
+            <if test="stuFamily !=null and stuFamily!=''">
+                and stu_family = #{stuFamily}
+            </if>
+        </where>
+    </select>
+    <insert id="insertUser" parameterType="UserVo">
+        <if test="#{stuName}!=null">
+            insert into student values (stu_id,#{stuName},#{stuAge},#{stuSex},#{stuFamily})
+        </if>
+    </insert>
+    <delete id="delUser" parameterType="Uservo">
+        delete  from student where stu_id=#{stuId};
+    </delete>
+</mapper>
